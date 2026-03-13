@@ -56,7 +56,7 @@ def stats(voiture):
 
 @app.route("/qr/<voiture>")
 def qr(voiture):
-    url = f"/payer/{voiture}"  # utiliser URL relative pour Render / production
+    url = f"/payer/CAL-001"  # utiliser URL relative pour Render / production
     img = qrcode.make(url)
     buf = io.BytesIO()
     img.save(buf)
