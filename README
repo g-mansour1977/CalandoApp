@@ -1,0 +1,29 @@
+# Calando App – Prototype de paiement pour calando
+
+Ce projet est un prototype d’application de paiement pour les calandos.  
+Il permet :
+
+- Générer des QR codes pour chaque voiture
+- Enregistrer des paiements via un serveur Flask
+- Consulter les statistiques (passagers et total payé)
+- Tester un bouton “Payer” depuis une page HTML
+
+---
+
+## Contenu du projet
+
+- `app.py` : serveur Flask gérant les paiements, QR codes et statistiques
+- `client.html` : page HTML pour tester le paiement
+- `scripts/generator_qr.py` : script Python pour générer des QR codes en `.png`
+- `calando.db` : base SQLite contenant les paiements (à ne pas publier si elle contient des données réelles)
+- `.gitignore` : fichiers à ignorer pour GitHub
+
+---
+
+## Installation
+
+1. Cloner le projet :
+
+```bash
+git clone https://github.com/ton_username/CalandoApp.git
+cd CalandoApp
