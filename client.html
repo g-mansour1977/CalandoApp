@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Paiement transport</h2>
+<p>Prix : 200 FCFA</p>
+<button onclick="payer()">Payer</button>
+
+<script>
+async function payer() {
+    try {
+        const response = await fetch("http://192.168.1.27:5000/payer", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                voiture: "CAL-001",
+                montant: 200
+            })
+        });
+
+        const data = await response.json();
+        alert("Paiement effectué : " + JSON.stringify(data));
+    } catch (err) {
+        alert("Erreur lors du paiement : " + err);
+    }
+}
+</script>
+</body>
+</html>
