@@ -1,4 +1,4 @@
+calando.db
 __pycache__/
 *.pyc
-*.db
 .env
