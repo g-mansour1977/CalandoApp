@@ -12,17 +12,16 @@
 
 <script>
 async function payer() {
-    try {
-        const response = await fetch("http://192.168.1.27:5000/payer", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                voiture: "CAL-001",
-                montant: 200
-            })
-        });
+    const response = await fetch("/payer", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            voiture: "CAL-001",
+            montant: 200
+        })
+    });
 
         const data = await response.json();
         alert("Paiement effectué : " + JSON.stringify(data));
