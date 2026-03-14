@@ -1,34 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paiement Transport</title>
 </head>
-<body>
-    <h2>Paiement transport</h2>
-<p>Prix : 200 FCFA</p>
-<button onclick="payer()">Payer</button>
 
+<body>
+
+<h2>Paiement transport</h2>
+<p>Prix : 200 FCFA</p>
+
+<button onclick="payer()">Payer</button>
+<p id="msg"></p>
 <script>
 async function payer() {
-    const response = await fetch("/payer", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            voiture: "CAL-001",
-            montant: 200
-        })
-    });
+    try {
+
+        const response = await fetch("/payer", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                voiture: "CAL-001",
+                montant: 200
+            })
+        });
 
         const data = await response.json();
         alert("Paiement effectué : " + JSON.stringify(data));
+
     } catch (err) {
         alert("Erreur lors du paiement : " + err);
     }
 }
 </script>
+
 </body>
 </html>
